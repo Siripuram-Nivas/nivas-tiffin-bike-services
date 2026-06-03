@@ -1,15 +1,22 @@
 import React from 'react';
-import { Wrench, Settings, Droplets, AlertTriangle, ShieldCheck, Cog } from 'lucide-react';
+import { Wrench, Settings, Droplets, AlertTriangle, ShieldCheck, Cog, Battery, Lightbulb, Zap, Activity, PenTool, CheckCircle, Car, LifeBuoy } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const BikeServices = ({ lang }) => {
   const services = [
-    { icon: <Settings />, nameEn: 'General Servicing', nameTe: 'జనరల్ సర్వీసింగ్' },
-    { icon: <AlertTriangle />, nameEn: 'Puncture Repair', nameTe: 'పంచర్ రిపేర్' },
-    { icon: <Cog />, nameEn: 'Engine Work', nameTe: 'ఇంజిన్ వర్క్' },
-    { icon: <Droplets />, nameEn: 'Oil Change', nameTe: 'ఆయిల్ చేంజ్' },
-    { icon: <ShieldCheck />, nameEn: 'Brake Repair', nameTe: 'బ్రేక్ రిపేర్' },
-    { icon: <Wrench />, nameEn: 'Daily Maintenance', nameTe: 'రోజువారీ నిర్వహణ' },
+    { icon: <Settings />, nameEn: 'Complete Bike Servicing', nameTe: 'కంప్లీట్ బైక్ సర్వీసింగ్' },
+    { icon: <Activity />, nameEn: 'Engine Diagnostics', nameTe: 'ఇంజిన్ డయాగ్నస్టిక్స్' },
+    { icon: <Droplets />, nameEn: 'Engine Oil Change', nameTe: 'ఇంజిన్ ఆయిల్ చేంజ్' },
+    { icon: <ShieldCheck />, nameEn: 'Brake Service & Adjustment', nameTe: 'బ్రేక్ సర్వీస్ & అడ్జస్ట్‌మెంట్' },
+    { icon: <Cog />, nameEn: 'Clutch Adjustment', nameTe: 'క్లచ్ అడ్జస్ట్‌మెంట్' },
+    { icon: <Wrench />, nameEn: 'Chain Cleaning & Lubrication', nameTe: 'చైన్ క్లీనింగ్ & లూబ్రికేషన్' },
+    { icon: <Battery />, nameEn: 'Battery Inspection', nameTe: 'బ్యాటరీ ఇన్స్పెక్షన్' },
+    { icon: <Lightbulb />, nameEn: 'Headlight & Indicator Repair', nameTe: 'హెడ్‌లైట్ & ఇండికేటర్ రిపేర్' },
+    { icon: <Zap />, nameEn: 'Electrical System Check', nameTe: 'ఎలక్ట్రికల్ సిస్టమ్ చెక్' },
+    { icon: <PenTool />, nameEn: 'Spark Plug Service', nameTe: 'స్పార్క్ ప్లగ్ సర్వీస్' },
+    { icon: <Settings />, nameEn: 'Suspension Check', nameTe: 'సస్పెన్షన్ చెక్' },
+    { icon: <CheckCircle />, nameEn: 'General Bike Maintenance', nameTe: 'జనరల్ బైక్ మెయింటెనెన్స్' },
+    { icon: <LifeBuoy />, nameEn: 'Emergency Breakdown Assistance', nameTe: 'ఎమర్జెన్సీ బ్రేక్‌డౌన్ అసిస్టెన్స్' },
   ];
 
   return (
@@ -34,21 +41,24 @@ const BikeServices = ({ lang }) => {
             
             <div className="grid grid-cols-2 gap-4">
               {services.map((service, idx) => (
-                <motion.div 
+                <motion.a 
+                  href={`https://wa.me/919110372978?text=Hello%20I%20would%20like%20information%20about%20${encodeURIComponent(service.nameEn)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   key={idx}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className="flex items-center gap-3 p-3 bg-gray-800 rounded-lg border border-gray-700 hover:border-brand-blue transition-colors"
+                  className="flex items-center gap-3 p-3 bg-gray-800 rounded-lg border border-gray-700 hover:border-brand-blue transition-colors cursor-pointer group"
                 >
-                  <div className="text-brand-blue bg-blue-900/30 p-2 rounded-md">
+                  <div className="text-brand-blue bg-blue-900/30 p-2 rounded-md group-hover:bg-brand-blue group-hover:text-white transition-colors">
                     {service.icon}
                   </div>
-                  <span className="font-medium text-sm">
+                  <span className="font-medium text-sm group-hover:text-white">
                     {lang === 'en' ? service.nameEn : service.nameTe}
                   </span>
-                </motion.div>
+                </motion.a>
               ))}
             </div>
             
