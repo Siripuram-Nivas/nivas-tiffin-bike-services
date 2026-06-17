@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { motion, useInView, animate } from 'framer-motion';
 
 const Counter = ({ from, to, duration = 2 }) => {

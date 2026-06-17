@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Droplets, ShieldAlert, Settings, BatteryCharging, CalendarCheck } from 'lucide-react';
 

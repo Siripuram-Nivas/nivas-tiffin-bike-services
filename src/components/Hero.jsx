@@ -1,6 +1,5 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Phone, MessageCircle, MapPin, Clock } from 'lucide-react';
+import { Phone, MapPin, Clock } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
 
 const Hero = ({ lang }) => {

@@ -1,5 +1,4 @@
-import React from 'react';
-import { Phone, MapPin } from 'lucide-react';
+import { Phone } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
 
 const Footer = ({ lang }) => {

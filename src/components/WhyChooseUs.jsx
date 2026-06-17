@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Shield, Clock, HeartHandshake, IndianRupee, ThumbsUp } from 'lucide-react';
 

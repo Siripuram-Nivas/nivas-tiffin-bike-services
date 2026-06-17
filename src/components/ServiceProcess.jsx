@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Search, PenTool, CheckCircle, Flag, ThumbsUp, Wrench } from 'lucide-react';
 
@@ -84,7 +83,7 @@ const ServiceProcess = ({ lang }) => {
                 className={`relative flex flex-col md:flex-row items-center ${idx % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
               >
                 {/* Center Node */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full border-4 border-white bg-brand-orange shadow-lg flex items-center justify-center z-10 hidden md:flex">
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full border-4 border-white bg-brand-orange shadow-lg items-center justify-center z-10 hidden md:flex">
                   {step.icon}
                 </div>
                 

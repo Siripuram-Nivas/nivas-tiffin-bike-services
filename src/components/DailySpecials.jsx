@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { FaWhatsapp } from 'react-icons/fa';
 
@@ -63,9 +62,9 @@ const DailySpecials = ({ lang }) => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="card group cursor-pointer"
+              className="card group cursor-pointer flex flex-col h-full"
             >
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-48 overflow-hidden shrink-0">
                 <img 
                   src={item.image} 
                   alt={item.name} 
@@ -75,16 +74,16 @@ const DailySpecials = ({ lang }) => {
                   {item.tag}
                 </div>
               </div>
-              <div className="p-5">
+              <div className="p-5 flex flex-col flex-grow">
                 <div className="flex justify-between items-start mb-4">
                   <h3 className="font-bold text-lg text-brand-charcoal">{item.name}</h3>
-                  <span className="font-bold text-brand-orange text-lg">{item.price}</span>
+                  <span className="font-bold text-brand-orange text-lg shrink-0 ml-2">{item.price}</span>
                 </div>
                 <a 
                   href={`https://wa.me/919110372978?text=Hello, is ${item.name} available now?`}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-full bg-green-50 text-green-700 hover:bg-green-100 py-2 rounded-lg flex justify-center items-center gap-2 font-medium transition-colors border border-green-200"
+                  className="w-full bg-green-50 text-green-700 hover:bg-green-100 py-2 rounded-lg flex justify-center items-center gap-2 font-medium transition-colors border border-green-200 mt-auto"
                 >
                   <FaWhatsapp size={18} className="text-green-600" />
                   {lang === 'en' ? 'Check Availability' : 'లభ్యత తనిఖీ చేయండి'}

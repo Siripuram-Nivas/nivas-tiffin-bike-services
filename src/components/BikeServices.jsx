@@ -1,5 +1,4 @@
-import React from 'react';
-import { Wrench, Settings, Droplets, AlertTriangle, ShieldCheck, Cog, Battery, Lightbulb, Zap, Activity, PenTool, CheckCircle, Car, LifeBuoy } from 'lucide-react';
+import { Wrench, Settings, Droplets, AlertTriangle, ShieldCheck, Cog, Battery, Lightbulb, Zap, Activity, PenTool, CheckCircle, LifeBuoy } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const BikeServices = ({ lang }) => {
