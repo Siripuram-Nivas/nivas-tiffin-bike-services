@@ -9,7 +9,7 @@ const Navbar = ({ lang, toggleLang }) => {
     { name: lang === 'en' ? 'Home' : 'హోమ్', href: '#home' },
     { name: lang === 'en' ? 'Specials' : 'స్పెషల్స్', href: '#specials' },
     { name: lang === 'en' ? 'Menu' : 'మెనూ', href: '#menu' },
-    { name: lang === 'en' ? 'Bike Services' : 'బైక్ సర్వీస్', href: '#services' },
+
     { name: lang === 'en' ? 'Contact' : 'సంప్రదించండి', href: '#contact' },
   ];
 
@@ -21,7 +21,7 @@ const Navbar = ({ lang, toggleLang }) => {
             <img src="/nivas_logo_1778318840012.png" alt="Nivas Logo" className="h-12 w-12 rounded-full object-cover shadow-sm" />
             <div className="flex flex-col">
               <span className="font-bold text-xl text-brand-charcoal leading-tight">Nivas</span>
-              <span className="text-xs text-brand-orange font-semibold">Tiffin & Bike Repair</span>
+              <span className="text-xs text-brand-orange font-semibold">Tiffin Center</span>
             </div>
           </div>
           

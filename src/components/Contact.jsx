@@ -11,8 +11,8 @@ const Contact = ({ lang }) => {
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
             {lang === 'en' 
-              ? 'Visit us for fresh food and expert bike repairs, or call us to check availability.'
-              : 'తాజా భోజనం మరియు నిపుణులైన బైక్ రిపేర్ల కోసం మమ్మల్ని సందర్శించండి లేదా కాల్ చేయండి.'}
+              ? 'Visit us for fresh homemade tiffins and meals, or call us to check availability.'
+              : 'తాజా ఇంటి భోజనం మరియు టిఫిన్ల కోసం మమ్మల్ని సందర్శించండి లేదా కాల్ చేయండి.'}
           </p>
         </div>
 
@@ -67,10 +67,16 @@ const Contact = ({ lang }) => {
                 </div>
                 <div>
                   <h4 className="font-bold mb-2 text-gray-300">{lang === 'en' ? 'Location' : 'లొకేషన్'}</h4>
-                  <p className="text-lg leading-relaxed">
-                    Nivas Tiffin & Bike Repair Services, <br />
-                    Sundaragiri, Telangana - 505467
-                  </p>
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=55VX%2BVRM+Sundaragiri+Telangana+505467"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-lg leading-relaxed hover:text-brand-orange transition-colors underline underline-offset-2 decoration-dotted"
+                  >
+                    Nivas Tiffin Center, <br />
+                    55VX+VRM, Sundaragiri, <br />
+                    Telangana - 505467
+                  </a>
                 </div>
               </div>
             </div>
@@ -85,7 +91,7 @@ const Contact = ({ lang }) => {
               allowFullScreen="" 
               loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade"
-              title="Nivas Tiffin & Bike Repair Services Location"
+              title="Nivas Tiffin Center Location"
               className="w-full h-full object-cover"
             ></iframe>
           </div>

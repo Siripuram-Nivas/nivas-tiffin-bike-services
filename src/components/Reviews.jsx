@@ -12,14 +12,6 @@ const Reviews = ({ lang }) => {
       type: "Food"
     },
     {
-      id: 2,
-      name: "Suresh",
-      textEn: "Got my bike serviced here. Nivas anna did a great job with the engine tuning.",
-      textTe: "నా బైక్ సర్వీసింగ్ ఇక్కడ చేయించాను. ఇంజిన్ ట్యూనింగ్ చాలా బాగా చేశారు.",
-      rating: 5,
-      type: "Bike"
-    },
-    {
       id: 3,
       name: "Venkatesh",
       textEn: "Morning idli is super soft. Daily customer here!",

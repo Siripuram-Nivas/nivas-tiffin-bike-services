@@ -3,7 +3,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 const FloatingWhatsApp = ({ lang }) => {
   return (
     <a
-      href="https://wa.me/919110372978?text=Hello%20Nivas%20Tiffin%20%26%20Bike%20Repair!%20"
+      href="https://wa.me/919110372978?text=Hello%20Nivas%20Tiffin%20Center!%20"
       target="_blank"
       rel="noreferrer"
       className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-xl hover:scale-110 transition-transform flex items-center justify-center group"

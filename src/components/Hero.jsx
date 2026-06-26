@@ -26,16 +26,16 @@ const Hero = ({ lang }) => {
             
             <h1 className="heading-lg mb-6 leading-tight">
               {lang === 'en' ? (
-                <>Fresh Homemade Food & <br/><span className="text-brand-orange">Trusted Bike Repairs</span></>
+                <>Fresh Homemade <span className="text-brand-orange">Tiffin & Meals</span></>
               ) : (
-                <>తాజా ఇంట్లో చేసిన భోజనం & <br/><span className="text-brand-orange">నమ్మకమైన బైక్ రిపేర్లు</span></>
+                <>తాజా ఇంట్లో చేసిన <span className="text-brand-orange">టిఫిన్ మరియు భోజనం</span></>
               )}
             </h1>
             
             <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-lg">
               {lang === 'en' 
-                ? 'Your local village spot for authentic hot meals and professional motorcycle mechanic services.'
-                : 'రుచికరమైన వేడి వేడి భోజనం మరియు ప్రొఫెషనల్ బైక్ మెకానిక్ సేవల కోసం మన ఊరి సరైన స్థలం.'}
+                ? 'Your local village spot for authentic hot tiffins and homemade meals, made fresh daily.'
+                : 'మన ఊరిలో తాజాగా తయారుచేసిన రుచికరమైన టిఫిన్స్ మరియు ఇంటి భోజనం కోసం సరైన స్థలం.'}
             </p>
             
             <div className="flex flex-wrap gap-4">
@@ -58,34 +58,16 @@ const Hero = ({ lang }) => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="grid grid-cols-2 gap-4 relative"
+            className="flex flex-col items-center gap-4"
           >
-            <div className="space-y-4 pt-12">
-              <img 
-                src="/tiffin_hero_food_1778318760478.png" 
-                alt="Homemade Tiffin" 
-                className="rounded-2xl shadow-xl w-full h-48 md:h-64 object-cover"
-              />
-              <div className="bg-white p-4 rounded-xl shadow-md border border-brand-orange/20">
-                <h3 className="font-bold text-brand-orange">Tiffin Center</h3>
-                <p className="text-sm text-gray-600">Fresh every morning</p>
-              </div>
-            </div>
-            <div className="space-y-4">
-              <div className="bg-brand-charcoal p-4 rounded-xl shadow-md text-white border border-gray-700">
-                <h3 className="font-bold text-brand-blue">Bike Mechanic</h3>
-                <p className="text-sm text-gray-400">Expert repair services</p>
-              </div>
-              <img 
-                src="/bike_repair_hero_1778318790816.png" 
-                alt="Bike Repair" 
-                className="rounded-2xl shadow-xl w-full h-48 md:h-64 object-cover"
-              />
-            </div>
-            
-            {/* Center overlapping circle */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-2xl z-20 hidden md:block">
-              <img src="/nivas_logo_1778318840012.png" alt="Nivas" className="w-16 h-16 rounded-full" />
+            <img 
+              src="/tiffin_hero_food_1778318760478.png" 
+              alt="Homemade Tiffin" 
+              className="rounded-2xl shadow-xl w-full h-64 md:h-80 object-cover"
+            />
+            <div className="bg-white p-4 rounded-xl shadow-md border border-brand-orange/20 w-full">
+              <h3 className="font-bold text-brand-orange">Nivas Tiffin Center</h3>
+              <p className="text-sm text-gray-600">Fresh every morning</p>
             </div>
           </motion.div>
           

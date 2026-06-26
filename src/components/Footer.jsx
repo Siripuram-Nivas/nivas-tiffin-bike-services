@@ -14,13 +14,13 @@ const Footer = ({ lang }) => {
               <img src="/nivas_logo_1778318840012.png" alt="Logo" className="w-12 h-12 rounded-full" />
               <div>
                 <h3 className="font-bold text-xl text-white">Nivas</h3>
-                <p className="text-brand-orange text-sm font-semibold">Tiffin & Bike Repair</p>
+                <p className="text-brand-orange text-sm font-semibold">Tiffin Center</p>
               </div>
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
               {lang === 'en' 
-                ? 'Your trusted local destination for authentic homemade meals and professional motorcycle repair services.'
-                : 'స్వచ్ఛమైన ఇంటి భోజనం మరియు నమ్మకమైన బైక్ రిపేర్ సేవల కోసం మీ స్థానిక గమ్యస్థానం.'}
+                ? 'Your trusted local destination for authentic homemade tiffins and fresh daily meals.'
+                : 'స్వచ్ఛమైన ఇంటి టిఫిన్స్ మరియు తాజా భోజనం కోసం మీ స్థానిక విశ్వసనీయ గమ్యస్థానం.'}
             </p>
             <div className="flex gap-4">
               <a href="tel:+919963090468" className="bg-gray-800 p-2 rounded-full hover:bg-brand-orange text-white transition-colors">
@@ -39,7 +39,6 @@ const Footer = ({ lang }) => {
             <ul className="space-y-3">
               <li><a href="#home" className="hover:text-brand-orange transition-colors">{lang === 'en' ? 'Home' : 'హోమ్'}</a></li>
               <li><a href="#menu" className="hover:text-brand-orange transition-colors">{lang === 'en' ? 'Tiffin Menu' : 'టిఫిన్ మెనూ'}</a></li>
-              <li><a href="#services" className="hover:text-brand-orange transition-colors">{lang === 'en' ? 'Bike Services' : 'బైక్ సర్వీస్'}</a></li>
               <li><a href="#reviews" className="hover:text-brand-orange transition-colors">{lang === 'en' ? 'Reviews' : 'రివ్యూలు'}</a></li>
             </ul>
           </div>
@@ -52,15 +51,13 @@ const Footer = ({ lang }) => {
               <li>{lang === 'en' ? '✅ Morning Tiffins' : '✅ ఉదయం టిఫిన్స్'}</li>
               <li>{lang === 'en' ? '✅ Afternoon Meals' : '✅ మధ్యాహ్న భోజనం'}</li>
               <li>{lang === 'en' ? '✅ Evening Snacks' : '✅ సాయంత్రం స్నాక్స్'}</li>
-              <li>{lang === 'en' ? '✅ General Servicing' : '✅ జనరల్ సర్వీసింగ్'}</li>
-              <li>{lang === 'en' ? '✅ Emergency Repairs' : '✅ ఎమర్జెన్సీ రిపేర్'}</li>
             </ul>
           </div>
 
         </div>
 
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-          <p>© {currentYear} Nivas Tiffin & Bike Repair Services. {lang === 'en' ? 'All rights reserved.' : 'సర్వ హక్కులు ప్రత్యేకించబడినవి.'}</p>
+          <p>© {currentYear} Nivas Tiffin Center. {lang === 'en' ? 'All rights reserved.' : 'సర్వ హక్కులు ప్రత్యేకించబడినవి.'}</p>
           <p className="flex items-center gap-1">
             {lang === 'en' ? 'Built for the Local Community' : 'స్థానిక ప్రజల కోసం నిర్మించబడింది'}
           </p>
