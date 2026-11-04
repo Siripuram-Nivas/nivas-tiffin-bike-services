@@ -8,81 +8,65 @@ export default {
   theme: {
     extend: {
       colors: {
-        brand: {
-          orange: '#FF6B00',
-          secondary: '#F97316',
-          yellow: '#FFB800',
-          cream: '#FFF8F2',
-          bg: '#FFF8F2',
-          charcoal: '#111827',
-          dark: '#111827',
-          gray: '#374151',
-          blue: '#3B82F6',
-          border: '#F3F4F6',
-          success: '#22C55E',
-          card: '#FFFFFF',
-        }
+        cream: {
+          50: '#FBF6EC',
+          100: '#F6EEDF',
+          200: '#EFE2CC',
+          300: '#E3D2B4',
+        },
+        forest: {
+          50: '#EFF3EF',
+          600: '#2C5A3E',
+          700: '#1E4630',
+          800: '#163726',
+          900: '#10291C',
+          950: '#0B1E14',
+        },
+        terracotta: {
+          50: '#FBF0EB',
+          100: '#F6DFD5',
+          200: '#EFC6B5',
+          400: '#C96A45',
+          500: '#B9542F',
+          600: '#9E4524',
+        },
+        saffron: {
+          300: '#EFCB84',
+          400: '#E5B45F',
+          500: '#D69B34',
+        },
+        ink: '#1C231B',
+        muted: '#6B6558',
+        line: '#E5DAC7',
+        whatsapp: '#25D366',
       },
       fontFamily: {
-        heading: ['DM Sans', 'sans-serif'],
+        display: ['Fraunces', 'Noto Sans Telugu', 'Georgia', 'serif'],
         sans: ['Inter', 'Noto Sans Telugu', 'sans-serif'],
         telugu: ['Noto Sans Telugu', 'sans-serif'],
       },
-      backgroundImage: {
-        'hero-gradient': 'linear-gradient(135deg, #FFF8F2 0%, #FFEDE0 50%, #FFF8F2 100%)',
-        'orange-gradient': 'linear-gradient(135deg, #FF6B00 0%, #F97316 100%)',
-        'dark-gradient': 'linear-gradient(135deg, #111827 0%, #1F2937 100%)',
-        'glass-gradient': 'linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.4) 100%)',
+      maxWidth: {
+        '8xl': '88rem',
       },
       boxShadow: {
-        'soft': '0 4px 24px rgba(0,0,0,0.06)',
-        'card': '0 8px 32px rgba(0,0,0,0.08)',
-        'orange': '0 8px 32px rgba(255,107,0,0.25)',
-        'orange-lg': '0 16px 48px rgba(255,107,0,0.30)',
-        'glass': '0 8px 32px rgba(0,0,0,0.05), inset 0 1px 0 rgba(255,255,255,0.6)',
-        'hover': '0 20px 60px rgba(0,0,0,0.12)',
-      },
-      animation: {
-        'float': 'float 4s ease-in-out infinite',
-        'float-delayed': 'float 4s ease-in-out 1s infinite',
-        'float-slow': 'float 6s ease-in-out 0.5s infinite',
-        'glow': 'glow 2s ease-in-out infinite alternate',
-        'slide-in': 'slideIn 0.3s ease-out',
-        'fade-up': 'fadeUp 0.6s ease-out',
-        'ping-slow': 'ping 2s cubic-bezier(0,0,0.2,1) infinite',
-        'shimmer': 'shimmer 2s infinite linear',
+        lift: '0 18px 40px -24px rgba(28, 35, 27, 0.35)',
+        drawer: '0 -12px 48px -12px rgba(11, 30, 20, 0.35)',
       },
       keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-12px)' },
-        },
-        glow: {
-          '0%': { textShadow: '0 0 20px rgba(255,107,0,0.3)' },
-          '100%': { textShadow: '0 0 40px rgba(255,107,0,0.7), 0 0 80px rgba(255,107,0,0.3)' },
-        },
-        slideIn: {
-          from: { transform: 'translateX(100%)' },
-          to: { transform: 'translateX(0)' },
-        },
-        fadeUp: {
-          from: { opacity: '0', transform: 'translateY(30px)' },
+        'fade-up': {
+          from: { opacity: '0', transform: 'translateY(16px)' },
           to: { opacity: '1', transform: 'translateY(0)' },
         },
-        shimmer: {
-          '0%': { backgroundPosition: '-200% 0' },
-          '100%': { backgroundPosition: '200% 0' },
+        'sheet-in': {
+          from: { transform: 'translateY(24px)', opacity: '0' },
+          to: { transform: 'translateY(0)', opacity: '1' },
         },
       },
-      borderRadius: {
-        '2xl': '1rem',
-        '3xl': '1.5rem',
-        '4xl': '2rem',
-      },
-      backdropBlur: {
-        xs: '2px',
+      animation: {
+        'fade-up': 'fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both',
+        'sheet-in': 'sheet-in 0.3s cubic-bezier(0.22, 1, 0.36, 1) both',
       },
     },
   },
   plugins: [],
-}
+};

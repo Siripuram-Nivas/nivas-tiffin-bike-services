@@ -1,140 +1,142 @@
-import { Phone, MapPin, Clock, ArrowRight } from 'lucide-react';
+import { Phone, MapPin, Clock, Navigation, Ban } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
+import { business, fullAddress, telLink } from '../data/business';
+import { categories } from '../data/menu';
+import { whatsappLink, generalEnquiryMessage } from '../lib/whatsapp';
 
 const Footer = ({ lang }) => {
-  const currentYear = new Date().getFullYear();
-
-  const quickLinks = [
-    { href: '#home',     labelEn: 'Home',        labelTe: 'హోమ్' },
-    { href: '#specials', labelEn: 'Specials',     labelTe: 'స్పెషల్స్' },
-    { href: '#menu',     labelEn: 'Tiffin Menu',  labelTe: 'టిఫిన్ మెనూ' },
-    { href: '#reviews',  labelEn: 'Reviews',      labelTe: 'రివ్యూలు' },
-    { href: '#contact',  labelEn: 'Contact',      labelTe: 'సంప్రదించండి' },
-  ];
-
-  const services = [
-    { labelEn: 'Morning Tiffins (5 AM–11 AM)',    labelTe: 'ఉదయం టిఫిన్స్ (5 AM–11 AM)' },
-    { labelEn: 'Afternoon Meals (11 AM–3 PM)',    labelTe: 'మధ్యాహ్న భోజనం (11 AM–3 PM)' },
-    { labelEn: 'Evening Snacks (4 PM–10:30 PM)',  labelTe: 'సాయంత్రం స్నాక్స్ (4 PM–10:30 PM)' },
-  ];
+  const t = (en, te) => (lang === 'en' ? en : te);
 
   return (
-    /* Footer is intentionally dark in both themes — premium dark footer pattern */
-    <footer className="bg-gray-900 dark:bg-[#0A0F1A] text-gray-300" aria-label="Site footer">
-      {/* Top gradient border */}
-      <div className="h-1 bg-gradient-to-r from-transparent via-brand-orange to-transparent" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-
-          {/* Brand Column */}
-          <div className="lg:col-span-1">
-            <div className="flex items-center gap-3 mb-5">
-              <img src="/nivas_logo_1778318840012.png" alt="Nivas Tiffin Center Logo"
-                className="w-12 h-12 rounded-full object-cover ring-2 ring-brand-orange/30" />
-              <div>
-                <h3 className="font-bold text-xl text-white leading-none" style={{ fontFamily: 'DM Sans, sans-serif' }}>Nivas</h3>
-                <p className="text-brand-orange text-xs font-semibold uppercase tracking-wide">Tiffin Center</p>
+    <footer className="bg-forest-950 pb-24 pt-14 text-cream-200/75 md:pb-8" aria-label="Site footer">
+      <div className="container-page">
+        <div className="grid gap-9 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+          <div>
+            <div className="flex items-center gap-2.5">
+              <img
+                src="/img/logo-192.webp"
+                alt="Nivas Tiffin Center logo"
+                width="44"
+                height="44"
+                className="h-11 w-11 rounded-full object-cover ring-1 ring-forest-700"
+              />
+              <div className="leading-none">
+                <p className="font-display text-xl font-semibold text-cream-50">Nivas</p>
+                <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-saffron-400">
+                  Tiffin Center
+                </p>
               </div>
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed mb-6">
-              {lang === 'en'
-                ? 'Your trusted local destination for authentic homemade tiffins and fresh daily meals in Sundaragiri, Telangana.'
-                : 'సుందరగిరి, తెలంగాణలో స్వచ్ఛమైన ఇంటి టిఫిన్స్ మరియు తాజా భోజనం కోసం మీ విశ్వసనీయ స్థానం.'}
+            <p className="mt-4 max-w-xs text-sm leading-relaxed">
+              {t(business.shortDescriptionEn, business.shortDescriptionTe)}
             </p>
-            <div className="flex gap-3">
-              <a href="tel:+919963090468" className="p-2.5 rounded-xl bg-white/10 hover:bg-brand-orange text-white transition-all duration-200" aria-label="Call Nivas Tiffin Center">
-                <Phone size={18} />
+            <div className="mt-5 flex gap-2">
+              <a
+                href={telLink(business.phones[0].e164)}
+                className="inline-flex h-10 items-center gap-2 border border-forest-700 px-3 text-xs font-semibold text-cream-100 transition-colors hover:border-saffron-400 hover:text-saffron-300"
+              >
+                <Phone size={14} aria-hidden="true" />
+                {business.phones[0].display}
               </a>
-              <a href="https://wa.me/919110372978" target="_blank" rel="noreferrer" className="p-2.5 rounded-xl bg-white/10 hover:bg-green-500 text-white transition-all duration-200" aria-label="WhatsApp Nivas Tiffin Center">
-                <FaWhatsapp size={18} />
-              </a>
-              <a href="https://maps.google.com/?q=18.194619,79.199441" target="_blank" rel="noreferrer" className="p-2.5 rounded-xl bg-white/10 hover:bg-red-500 text-white transition-all duration-200" aria-label="View on Google Maps">
-                <MapPin size={18} />
+              <a
+                href={whatsappLink(generalEnquiryMessage(lang))}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex h-10 items-center gap-2 border border-forest-700 px-3 text-xs font-semibold text-cream-100 transition-colors hover:border-[#25D366] hover:text-[#7BE3A5]"
+              >
+                <FaWhatsapp size={15} aria-hidden="true" />
+                WhatsApp
               </a>
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-white font-bold text-base mb-5" style={{ fontFamily: 'DM Sans, sans-serif' }}>
-              {lang === 'en' ? 'Quick Links' : 'క్విక్ లింక్స్'}
-            </h4>
-            <ul className="space-y-3">
-              {quickLinks.map((link) => (
-                <li key={link.href}>
-                  <a href={link.href} className="group flex items-center gap-2 text-gray-400 hover:text-brand-orange transition-colors duration-200 text-sm">
-                    <ArrowRight size={13} className="opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all duration-200" />
-                    {lang === 'en' ? link.labelEn : link.labelTe}
+          <nav aria-label="Menu categories">
+            <h2 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cream-50">
+              {t('Menu', 'మెనూ')}
+            </h2>
+            <ul className="mt-4 space-y-2.5 text-sm">
+              {categories.map((category) => (
+                <li key={category.id}>
+                  <a href="#menu" className="transition-colors hover:text-saffron-300">
+                    {lang === 'en' ? category.labelEn : category.labelTe}
+                    <span className="block text-[11px] text-cream-200/50">
+                      {lang === 'en' ? category.timingEn : category.timingTe}
+                    </span>
                   </a>
                 </li>
               ))}
             </ul>
+            <ul className="mt-5 space-y-2 text-sm">
+              <li>
+                <a href="#about" className="transition-colors hover:text-saffron-300">
+                  {t('About us', 'మా గురించి')}
+                </a>
+              </li>
+              <li>
+                <a href="#gallery" className="transition-colors hover:text-saffron-300">
+                  {t('Gallery', 'ఫోటోలు')}
+                </a>
+              </li>
+              <li>
+                <a href="#contact" className="transition-colors hover:text-saffron-300">
+                  {t('Contact', 'సంప్రదించండి')}
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+          <div>
+            <h2 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cream-50">
+              {t('Visit', 'చిరునామా')}
+            </h2>
+            <p className="mt-4 flex items-start gap-2 text-sm leading-relaxed">
+              <MapPin size={15} className="mt-0.5 shrink-0 text-saffron-400" aria-hidden="true" />
+              {fullAddress}
+            </p>
+            <a
+              href={business.maps.directions}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-saffron-400 hover:underline"
+            >
+              <Navigation size={12} aria-hidden="true" />
+              {t('Open in Google Maps', 'గూగుల్ మ్యాప్స్‌లో తెరవండి')}
+            </a>
+            <p className="mt-4 text-xs leading-relaxed text-cream-200/55">
+              {t(
+                'Sundaragiri, Telangana. Call before travelling to check the day’s menu.',
+                'సుందరగిరి, తెలంగాణ. బయలుదేరే ముందు రోజు మెనూ కోసం కాల్ చేయండి.'
+              )}
+            </p>
           </div>
 
-          {/* Opening Hours */}
           <div>
-            <h4 className="text-white font-bold text-base mb-5" style={{ fontFamily: 'DM Sans, sans-serif' }}>
-              {lang === 'en' ? 'Opening Hours' : 'పనివేళలు'}
-            </h4>
-            <div className="space-y-3 text-sm">
-              <div className="flex items-center gap-2">
-                <Clock size={14} className="text-brand-orange shrink-0" />
-                <div>
-                  <p className="text-white font-semibold">5:00 AM – 10:30 PM</p>
-                  <p className="text-gray-500 text-xs">{lang === 'en' ? 'Open All Days' : 'అన్ని రోజులు'}</p>
-                </div>
-              </div>
-              <ul className="space-y-2 mt-3">
-                {services.map((s, i) => (
-                  <li key={i} className="text-gray-400 text-xs flex items-start gap-2">
-                    <span className="text-brand-success mt-0.5 shrink-0">✓</span>
-                    {lang === 'en' ? s.labelEn : s.labelTe}
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-3 px-3 py-2 rounded-xl bg-red-900/30 border border-red-800/40 text-xs text-red-300">
-                🚫 {lang === 'en' ? 'No Home Delivery' : 'హోమ్ డెలివరీ లేదు'}
-              </div>
-            </div>
-          </div>
-
-          {/* Location */}
-          <div>
-            <h4 className="text-white font-bold text-base mb-5" style={{ fontFamily: 'DM Sans, sans-serif' }}>
-              {lang === 'en' ? 'Location' : 'లొకేషన్'}
-            </h4>
-            <div className="space-y-4 text-sm">
-              <div className="flex items-start gap-2 text-gray-400">
-                <MapPin size={15} className="text-brand-orange shrink-0 mt-0.5" />
-                <span>55VX+VRM, Sundaragiri,<br />Telangana – 505467</span>
-              </div>
-              <div className="flex flex-col gap-2">
-                <a href="tel:+919963090468" className="flex items-center gap-2 text-gray-400 hover:text-brand-orange transition-colors" aria-label="Call 9963090468">
-                  <Phone size={13} className="text-brand-orange" />9963090468
-                </a>
-                <a href="tel:+919701513468" className="flex items-center gap-2 text-gray-400 hover:text-brand-orange transition-colors" aria-label="Call 9701513468">
-                  <Phone size={13} className="text-brand-orange" />9701513468
-                </a>
-              </div>
-              <a href="https://www.google.com/maps/search/?api=1&query=55VX%2BVRM+Sundaragiri+Telangana+505467" target="_blank" rel="noreferrer"
-                className="inline-flex items-center gap-2 text-xs text-brand-orange hover:underline font-semibold"
-                aria-label="View on Google Maps"
-              >
-                <MapPin size={12} />
-                {lang === 'en' ? 'View on Google Maps' : 'గూగుల్ మ్యాప్స్‌లో చూడండి'}
-              </a>
-            </div>
+            <h2 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cream-50">
+              {t('Hours', 'పనివేళలు')}
+            </h2>
+            <p className="mt-4 flex items-center gap-2 text-sm font-semibold text-cream-50">
+              <Clock size={14} className="text-saffron-400" aria-hidden="true" />
+              {business.hours.openDaily}
+            </p>
+            <p className="mt-1 text-xs">{t('Open all seven days', 'వారంలో ఏడు రోజులు')}</p>
+            <ul className="mt-3 space-y-1.5 text-xs text-cream-200/60">
+              {business.hours.services.map((service) => (
+                <li key={service.id}>{lang === 'en' ? service.en : service.te}</li>
+              ))}
+            </ul>
+            <p className="mt-5 flex items-start gap-2 border border-forest-700 px-3 py-2.5 text-xs leading-relaxed text-cream-200/80">
+              <Ban size={13} className="mt-0.5 shrink-0 text-terracotta-400" aria-hidden="true" />
+              {t(
+                'No home delivery. No online payment. Takeaway only.',
+                'హోమ్ డెలివరీ లేదు. ఆన్‌లైన్ చెల్లింపు లేదు. టేక్అవే మాత్రమే.'
+              )}
+            </p>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-gray-500">
-          <p>© {currentYear} Nivas Tiffin Center. {lang === 'en' ? 'All rights reserved.' : 'సర్వ హక్కులు ప్రత్యేకించబడినవి.'}</p>
-          <p className="flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-success" />
-            {lang === 'en' ? 'Built for the Local Community of Sundaragiri' : 'సుందరగిరి స్థానిక ప్రజల కోసం నిర్మించబడింది'}
-          </p>
+        <div className="mt-10 flex flex-col gap-2 border-t border-forest-700 pt-6 text-xs text-cream-200/50 sm:flex-row sm:items-center sm:justify-between">
+          <p>© {new Date().getFullYear()} Nivas Tiffin Center. {t('All rights reserved.', 'సర్వ హక్కులు ప్రత్యేకించబడినవి.')}</p>
+          <p>{t('Menu and availability may change daily.', 'మెనూ మరియు లభ్యత రోజువారీ మారవచ్చు.')}</p>
         </div>
       </div>
     </footer>

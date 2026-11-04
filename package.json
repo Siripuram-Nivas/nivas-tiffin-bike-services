@@ -7,6 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
+    "test:enquiry": "node scripts/check-enquiry.mjs",
+    "images": "node scripts/optimize-images.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
