@@ -1,134 +1,113 @@
-import { motion } from 'framer-motion';
-import { Leaf, Heart, BadgeIndianRupee, ShieldCheck, Soup, Smile } from 'lucide-react';
+import { Sun, UtensilsCrossed, IndianRupee, ShoppingBag, MapPin, Info } from 'lucide-react';
+import { SectionHeading } from './ui';
 
 const features = [
   {
-    id: 1, Icon: Leaf,
-    titleEn: 'Fresh Daily',        titleTe: 'రోజూ తాజా',
-    descEn:  'Every item is prepared fresh every single morning. No leftovers, no reheating — ever.',
-    descTe:  'ప్రతి రోజూ ఉదయమే తాజాగా తయారుచేస్తాం. మళ్ళీ వేడి చేయడం జరగదు.',
-    color: 'from-green-400 to-emerald-500', bg: 'bg-green-50 dark:bg-green-900/10',
-    border: 'border-green-100 dark:border-green-800/30', glow: 'rgba(34, 197, 94, 0.15)',
+    Icon: Sun,
+    en: {
+      title: 'Fresh through the day',
+      body: 'Breakfast, meals and snacks are prepared in batches during our service hours, not all at once.',
+    },
+    te: {
+      title: 'రోజంతా తాజా',
+      body: 'అల్పాహారం, భోజనం మరియు స్నాక్స్ మా సమయాల్లో దశలవారీగా తయారవుతాయి.',
+    },
   },
   {
-    id: 2, Icon: Heart,
-    titleEn: 'Homemade',           titleTe: 'ఇంటి రుచి',
-    descEn:  'Cooked with love using time-tested family recipes passed down through generations.',
-    descTe:  'తరతరాలుగా వచ్చిన కుటుంబ వంట పద్ధతులతో ప్రేమగా వండుతాం.',
-    color: 'from-red-400 to-rose-500', bg: 'bg-red-50 dark:bg-red-900/10',
-    border: 'border-red-100 dark:border-red-800/30', glow: 'rgba(239, 68, 68, 0.15)',
+    Icon: UtensilsCrossed,
+    en: {
+      title: 'Traditional Telugu taste',
+      body: 'Idli, dosa, jonna rotte, punugulu and homely meals — the flavours people around here grew up with.',
+    },
+    te: {
+      title: 'సాంప్రదాయ తెలుగు రుచి',
+      body: 'ఇడ్లీ, దోసె, జొన్న రొట్టె, పునుగులు మరియు ఇంటి భోజనం — ఇక్కడి వారికి తెలిసిన రుచులు.',
+    },
   },
   {
-    id: 3, Icon: BadgeIndianRupee,
-    titleEn: 'Affordable Prices',  titleTe: 'సరసమైన ధరలు',
-    descEn:  'Quality food at prices everyone can afford. Starting from just ₹15 per item.',
-    descTe:  'అందరికీ అందుబాటులో ఉండే ధరలలో నాణ్యమైన ఆహారం. ₹15 నుండి మొదలు.',
-    color: 'from-brand-orange to-orange-500', bg: 'bg-orange-50 dark:bg-orange-900/10',
-    border: 'border-orange-100 dark:border-orange-800/30', glow: 'rgba(255, 107, 0, 0.15)',
+    Icon: IndianRupee,
+    en: {
+      title: 'Prices for every day',
+      body: 'Menu items start at ₹15. The full menu, with half and full portions, is listed on this page.',
+    },
+    te: {
+      title: 'రోజువారీ ధరలు',
+      body: 'మెనూ వస్తువులు ₹15 నుండి. హాఫ్ మరియు ఫుల్ పరిమాణాలతో పూర్తి మెనూ ఇక్కడ ఉంది.',
+    },
   },
   {
-    id: 4, Icon: ShieldCheck,
-    titleEn: 'Quality Ingredients', titleTe: 'నాణ్యమైన పదార్ధాలు',
-    descEn:  'Only the best locally sourced, fresh ingredients — no artificial additives or preservatives.',
-    descTe:  'స్థానిక తాజా పదార్ధాలే వాడతాం — కృత్రిమ రంగులు లేదా preservatives లేవు.',
-    color: 'from-blue-400 to-indigo-500', bg: 'bg-blue-50 dark:bg-blue-900/10',
-    border: 'border-blue-100 dark:border-blue-800/30', glow: 'rgba(59, 130, 246, 0.15)',
+    Icon: ShoppingBag,
+    en: {
+      title: 'Simple takeaway enquiries',
+      body: 'Pick your items, send the list on WhatsApp, and the shop replies with what is available.',
+    },
+    te: {
+      title: 'సులభమైన టేక్అవే విచారణ',
+      body: 'మీ వస్తువులను ఎంచుకోండి, వాట్సాప్‌లో పంపండి, ఏమి లభ్యమో షాపు తెలియజేస్తుంది.',
+    },
   },
   {
-    id: 5, Icon: Soup,
-    titleEn: 'Traditional Recipes', titleTe: 'సాంప్రదాయ వంటలు',
-    descEn:  'Authentic Telugu flavors — Idli, Dosa, Jonna Rotte, Punugulu — just like grandmother used to make.',
-    descTe:  'అసలైన తెలుగు రుచులు — అమ్మమ్మ చేసినట్టే ఉంటాయి.',
-    color: 'from-amber-400 to-yellow-500', bg: 'bg-amber-50 dark:bg-amber-900/10',
-    border: 'border-amber-100 dark:border-amber-800/30', glow: 'rgba(245, 158, 11, 0.15)',
-  },
-  {
-    id: 6, Icon: Smile,
-    titleEn: 'Friendly Service',   titleTe: 'మైత్రీపూర్వకమైన సేవ',
-    descEn:  'We treat every customer like family. Come in, feel at home, and leave satisfied.',
-    descTe:  'ప్రతి కస్టమర్‌ని కుటుంబ సభ్యుడిలా చూస్తాం. వచ్చి ఇంటి వాతావరణం అనుభవించండి.',
-    color: 'from-purple-400 to-violet-500', bg: 'bg-purple-50 dark:bg-purple-900/10',
-    border: 'border-purple-100 dark:border-purple-800/30', glow: 'rgba(139, 92, 246, 0.15)',
+    Icon: MapPin,
+    en: {
+      title: 'A local, friendly shop',
+      body: 'A small neighbourhood tiffin center in Sundaragiri. Come in, or call us on 9963090468.',
+    },
+    te: {
+      title: 'స్థానిక, స్నేహపూర్వక షాపు',
+      body: 'సుందరగిరిలోని చిన్న టిఫిన్ సెంటర్. రండి, లేదా 9963090468కు కాల్ చేయండి.',
+    },
   },
 ];
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i) => ({
-    opacity: 1, y: 0,
-    transition: { duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] },
-  }),
-};
+const WhyChooseUs = ({ lang }) => {
+  const t = (en, te) => (lang === 'en' ? en : te);
 
-const WhyChooseUs = ({ lang }) => (
-  <section className="py-20 md:py-28 bg-white dark:bg-[#0F172A] relative overflow-hidden" aria-label="Why Choose Nivas Tiffin Center">
-    <div className="absolute inset-0 opacity-40 dark:opacity-20"
-      style={{ backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(255,107,0,0.04) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(249,115,22,0.04) 0%, transparent 50%)' }} />
-
-    <div className="section-container relative z-10">
-
-      {/* Header */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="text-center mb-16"
-      >
-        <div className="section-label dark:bg-orange-900/20 dark:border-orange-800 dark:text-orange-300">
-          <Heart size={14} />
-          {lang === 'en' ? 'Our Promise' : 'మా వాగ్దానం'}
-        </div>
-        <h2 className="heading-md text-brand-dark dark:text-white mb-4">
-          {lang === 'en' ? 'Why Choose Us?' : 'ఎందుకు మా దగ్గరికి వస్తారు?'}
-        </h2>
-        <div className="divider" />
-        <p className="text-gray-500 dark:text-gray-400 mt-5 max-w-xl mx-auto leading-relaxed">
-          {lang === 'en'
-            ? "We're not just a tiffin center — we're a part of your daily routine. Here's what sets us apart."
-            : 'మేము కేవలం టిఫిన్ సెంటర్ మాత్రమే కాదు — మీ రోజువారీ జీవితంలో భాగం.'}
-        </p>
-      </motion.div>
-
-      {/* Cards */}
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        {features.map((feature, i) => {
-          const { Icon } = feature;
-          return (
-            <motion.article
-              key={feature.id}
-              custom={i}
-              variants={cardVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: '-30px' }}
-              whileHover={{ y: -8, transition: { duration: 0.25 } }}
-              className={`group relative p-6 rounded-3xl ${feature.bg} border ${feature.border} cursor-default overflow-hidden`}
-              style={{ boxShadow: '0 4px 24px rgba(0,0,0,0.04)' }}
-              aria-label={lang === 'en' ? feature.titleEn : feature.titleTe}
-            >
-              {/* Glow on hover */}
-              <div
-                className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-                style={{ background: `radial-gradient(circle at 50% 0%, ${feature.glow} 0%, transparent 70%)` }}
-              />
-
-              <div className={`inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-gradient-to-br ${feature.color} text-white mb-4 shadow-md group-hover:scale-110 transition-transform duration-300`}>
-                <Icon size={22} />
-              </div>
-
-              <h3 className="font-bold text-lg text-brand-dark dark:text-white mb-2" style={{ fontFamily: 'DM Sans, sans-serif' }}>
-                {lang === 'en' ? feature.titleEn : feature.titleTe}
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-                {lang === 'en' ? feature.descEn : feature.descTe}
+  return (
+    <section id="why" className="bg-alt py-16 md:py-24" aria-labelledby="why-title">
+      <div className="container-page">
+        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+          <div className="lg:sticky lg:top-28 lg:self-start">
+            <SectionHeading
+              id="why-title"
+              eyebrow={t('Why people stop by', 'ఎందుకు ఆగుతారు')}
+              title={t('Good food, kept simple', 'మంచి భోజనం, సరళంగా')}
+              description={t(
+                'No delivery apps, no online payment, no gimmicks. Just a local kitchen serving fresh food every day.',
+                'డెలివరీ యాప్‌లు లేవు, ఆన్‌లైన్ చెల్లింపు లేదు, ఆర్భాటాలు లేవు. ప్రతిరోజూ తాజా భోజనం అందించే స్థానిక వంటశాల.'
+              )}
+            />
+            <div className="mt-7 flex items-start gap-2.5 border border-hair p-4">
+              <Info size={15} className="mt-0.5 shrink-0 text-terracotta-500 dark:text-saffron-400" aria-hidden="true" />
+              <p className="text-xs leading-relaxed text-soft">
+                {t(
+                  'Menu availability can change daily. Calling ahead is the quickest way to check.',
+                  'మెనూ లభ్యత రోజువారీ మారవచ్చు. ముందే కాల్ చేయడం అత్యంత వేగవంతమైన మార్గం.'
+                )}
               </p>
-            </motion.article>
-          );
-        })}
+            </div>
+          </div>
+
+          <ul className="divide-y divide-line border-y border-hair dark:divide-forest-700">
+            {features.map(({ Icon, en, te }, index) => {
+              const copy = lang === 'en' ? en : te;
+              return (
+                <li key={en.title} className="flex gap-4 py-5 sm:gap-6">
+                  <span className="font-display text-sm font-semibold text-soft">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <Icon size={18} className="mt-0.5 hidden shrink-0 text-terracotta-500 dark:text-saffron-400 sm:block" aria-hidden="true" />
+                  <div>
+                    <h3 className="font-display text-lg font-semibold text-body">{copy.title}</h3>
+                    <p className="mt-1 text-sm leading-relaxed text-soft">{copy.body}</p>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default WhyChooseUs;

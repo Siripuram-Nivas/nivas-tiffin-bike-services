@@ -1,233 +1,181 @@
-import { Phone, MapPin, Clock, Navigation } from 'lucide-react';
+import { MapPin, Phone, Clock, Navigation, Ban, Wallet } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
-import { motion } from 'framer-motion';
+import { SectionHeading } from './ui';
+import { business, fullAddress, telLink } from '../data/business';
+import { whatsappLink, generalEnquiryMessage } from '../lib/whatsapp';
 
-/**
- * Contact section — fully theme-aware.
- *
- * Light mode: left panel = white bg, dark gray text
- * Dark mode:  left panel = #111827 bg, white text / gray-300 labels
- *
- * The Google Maps iframe remains on the right at all times.
- */
 const Contact = ({ lang }) => {
+  const t = (en, te) => (lang === 'en' ? en : te);
+
   return (
-    <section className="py-20 md:py-28 bg-brand-cream dark:bg-[#0F172A]" aria-label="Contact and location">
-      <div className="section-container">
+    <section id="contact" className="bg-page py-16 md:py-24" aria-labelledby="contact-title">
+      <div className="container-page">
+        <SectionHeading
+          id="contact-title"
+          eyebrow={t('Visit the shop', 'షాపుకు రండి')}
+          title={t('Come in, or call ahead', 'రండి, లేదా ముందే కాల్ చేయండి')}
+          description={t(
+            'We are open every day in Sundaragiri. Call or message us to check the day’s menu before you travel.',
+            'సుందరగిరిలో ప్రతిరోజూ తెరిచి ఉంటాము. బయలుదేరే ముందు రోజు మెనూ తెలుసుకోవడానికి కాల్ లేదా మెసేజ్ చేయండి.'
+          )}
+        />
 
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-14"
-        >
-          <div className="section-label dark:bg-orange-900/20 dark:border-orange-800 dark:text-orange-300">
-            <MapPin size={14} />
-            {lang === 'en' ? 'Find Us' : 'మమ్మల్ని కనుగొనండి'}
-          </div>
-          <h2 className="heading-md text-brand-dark dark:text-white mb-4">
-            {lang === 'en' ? 'Get In Touch' : 'మమ్మల్ని సంప్రదించండి'}
-          </h2>
-          <div className="divider" />
-          <p className="text-gray-500 dark:text-gray-400 max-w-xl mx-auto mt-5">
-            {lang === 'en'
-              ? "Visit us for fresh homemade tiffins and meals, or call us to check today's availability."
-              : 'తాజా ఇంటి భోజనం కోసం మమ్మల్ని సందర్శించండి లేదా కాల్ చేయండి.'}
-          </p>
-        </motion.div>
-
-        {/* Main Card */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="bg-white dark:bg-gray-900 rounded-3xl overflow-hidden
-                     shadow-hover border border-brand-border dark:border-gray-700"
-        >
-          <div className="grid lg:grid-cols-2">
-
-            {/* ═══ LEFT: Contact Info ═══
-                Light: white bg, dark text
-                Dark : #111827 bg, white/gray text */}
-            <div className="p-8 md:p-12
-                            bg-white dark:bg-[#111827]
-                            border-b lg:border-b-0 lg:border-r
-                            border-gray-100 dark:border-gray-700">
-
-              <h3 className="text-2xl font-bold text-brand-dark dark:text-white mb-8" style={{ fontFamily: 'DM Sans, sans-serif' }}>
-                {lang === 'en' ? 'Contact Information' : 'సంప్రదింపు వివరాలు'}
-              </h3>
-
-              <div className="space-y-7">
-
-                {/* Phone */}
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }} transition={{ delay: 0, duration: 0.5 }}
-                  className="flex items-start gap-4"
-                >
-                  <div className="p-3 rounded-2xl bg-orange-100 dark:bg-orange-900/30 text-brand-orange shrink-0">
-                    <Phone size={20} />
-                  </div>
-                  <div>
-                    <p className="text-gray-500 dark:text-gray-300 text-xs font-semibold uppercase tracking-wider mb-2">
-                      {lang === 'en' ? 'Phone Numbers' : 'ఫోన్ నంబర్లు'}
-                    </p>
-                    <a href="tel:+919963090468"
-                      className="flex items-center gap-2 text-lg font-semibold text-gray-900 dark:text-white hover:text-brand-orange dark:hover:text-brand-orange transition-colors group"
-                      aria-label="Call 9963090468"
-                    >
-                      9963090468
-                      <Phone size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
-                    </a>
-                    <a href="tel:+919701513468"
-                      className="flex items-center gap-2 text-lg font-semibold text-gray-900 dark:text-white hover:text-brand-orange dark:hover:text-brand-orange transition-colors group"
-                      aria-label="Call 9701513468"
-                    >
-                      9701513468
-                      <Phone size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
-                    </a>
-                  </div>
-                </motion.div>
-
-                {/* WhatsApp */}
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }} transition={{ delay: 0.1, duration: 0.5 }}
-                  className="flex items-start gap-4"
-                >
-                  <div className="p-3 rounded-2xl bg-green-50 dark:bg-green-900/20 text-green-600 shrink-0">
-                    <FaWhatsapp size={20} />
-                  </div>
-                  <div>
-                    <p className="text-gray-500 dark:text-gray-300 text-xs font-semibold uppercase tracking-wider mb-2">
-                      {lang === 'en' ? 'WhatsApp' : 'వాట్సాప్'}
-                    </p>
-                    <a href="https://wa.me/919110372978" target="_blank" rel="noreferrer"
-                      className="block text-lg font-semibold text-gray-900 dark:text-white hover:text-green-600 dark:hover:text-green-400 transition-colors"
-                      aria-label="WhatsApp 9110372978"
-                    >9110372978</a>
-                    <a href="https://wa.me/919701513468" target="_blank" rel="noreferrer"
-                      className="block text-lg font-semibold text-gray-900 dark:text-white hover:text-green-600 dark:hover:text-green-400 transition-colors"
-                      aria-label="WhatsApp 9701513468"
-                    >9701513468</a>
-                  </div>
-                </motion.div>
-
-                {/* Hours */}
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }} transition={{ delay: 0.2, duration: 0.5 }}
-                  className="flex items-start gap-4"
-                >
-                  <div className="p-3 rounded-2xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 shrink-0">
-                    <Clock size={20} />
-                  </div>
-                  <div>
-                    <p className="text-gray-500 dark:text-gray-300 text-xs font-semibold uppercase tracking-wider mb-2">
-                      {lang === 'en' ? 'Opening Hours' : 'పనివేళలు'}
-                    </p>
-                    <p className="text-xl font-bold text-gray-900 dark:text-white" style={{ fontFamily: 'DM Sans, sans-serif' }}>5:00 AM — 10:30 PM</p>
-                    <p className="text-sm text-brand-success font-semibold mt-1">Open All Days · 7 days a week</p>
-                  </div>
-                </motion.div>
-
-                {/* Location */}
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }} transition={{ delay: 0.3, duration: 0.5 }}
-                  className="flex items-start gap-4"
-                >
-                  <div className="p-3 rounded-2xl bg-red-50 dark:bg-red-900/20 text-red-500 shrink-0">
-                    <MapPin size={20} />
-                  </div>
-                  <div>
-                    <p className="text-gray-500 dark:text-gray-300 text-xs font-semibold uppercase tracking-wider mb-2">
-                      {lang === 'en' ? 'Location' : 'లొకేషన్'}
-                    </p>
+        <div className="mt-10 grid overflow-hidden border border-hair lg:grid-cols-[1fr_1.05fr]">
+          <div className="bg-card p-5 sm:p-8">
+            <dl className="space-y-6">
+              <div className="flex gap-3.5">
+                <span className="icon-tile">
+                  <MapPin size={18} aria-hidden="true" />
+                </span>
+                <div>
+                  <dt className="text-[11px] font-semibold uppercase tracking-wider text-soft">
+                    {t('Address', 'చిరునామా')}
+                  </dt>
+                  <dd className="mt-1.5 text-sm leading-relaxed text-body">
                     <a
-                      href="https://www.google.com/maps/search/?api=1&query=55VX%2BVRM+Sundaragiri+Telangana+505467"
+                      href={business.maps.directions}
                       target="_blank"
                       rel="noreferrer"
-                      className="text-base text-gray-700 dark:text-gray-200 hover:text-brand-orange dark:hover:text-brand-orange transition-colors leading-relaxed underline underline-offset-4 decoration-dotted"
-                      aria-label="Open location in Google Maps"
+                      className="hover:text-terracotta-500 hover:underline dark:hover:text-saffron-400"
                     >
-                      Nivas Tiffin Center,<br />
-                      55VX+VRM, Sundaragiri,<br />
-                      Telangana – 505467
+                      {fullAddress}
                     </a>
-                  </div>
-                </motion.div>
+                  </dd>
+                  <dd>
+                    <a
+                      href={business.maps.directions}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-terracotta-500 hover:underline dark:text-saffron-400"
+                    >
+                      <Navigation size={12} aria-hidden="true" />
+                      {t('Get directions', 'దారి చూసుకోండి')}
+                    </a>
+                  </dd>
+                </div>
               </div>
 
-              {/* Action buttons */}
-              <div className="mt-10 flex flex-col sm:flex-row gap-3">
-                <a
-                  href="tel:+919963090468"
-                  className="flex items-center justify-center gap-2 px-5 py-3
-                             bg-brand-orange text-white font-semibold rounded-2xl
-                             hover:bg-orange-600 shadow-orange transition-all duration-200 text-sm"
-                  aria-label="Call Now"
-                >
-                  <Phone size={16} />
-                  {lang === 'en' ? 'Call Now' : 'కాల్ చేయండి'}
-                </a>
-                <a
-                  href="https://maps.google.com/?q=18.194619,79.199441"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center justify-center gap-2 px-5 py-3
-                             bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600
-                             text-gray-700 dark:text-gray-200 font-semibold rounded-2xl
-                             border border-gray-200 dark:border-gray-600
-                             transition-all duration-200 text-sm"
-                  aria-label="Get directions on Google Maps"
-                >
-                  <Navigation size={16} />
-                  {lang === 'en' ? 'Get Directions' : 'దారి చూపించండి'}
-                </a>
-                <a
-                  href="https://wa.me/919110372978"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center justify-center gap-2 px-5 py-3
-                             bg-green-50 dark:bg-green-900/20 hover:bg-green-100 dark:hover:bg-green-900/30
-                             text-green-700 dark:text-green-400 font-semibold rounded-2xl
-                             border border-green-200 dark:border-green-700
-                             transition-all duration-200 text-sm"
-                  aria-label="WhatsApp us"
-                >
-                  <FaWhatsapp size={16} />
-                  WhatsApp
-                </a>
+              <div className="flex gap-3.5">
+                <span className="icon-tile">
+                  <Phone size={18} aria-hidden="true" />
+                </span>
+                <div>
+                  <dt className="text-[11px] font-semibold uppercase tracking-wider text-soft">
+                    {t('Phone', 'ఫోన్')}
+                  </dt>
+                  <dd className="mt-1.5 flex flex-col gap-1">
+                    {business.phones.map((phone) => (
+                      <a
+                        key={phone.e164}
+                        href={telLink(phone.e164)}
+                        className="text-sm font-semibold text-body hover:text-terracotta-500 dark:hover:text-saffron-400"
+                      >
+                        {phone.display}
+                      </a>
+                    ))}
+                  </dd>
+                </div>
               </div>
+
+              <div className="flex gap-3.5">
+                <span className="icon-tile">
+                  <FaWhatsapp size={18} aria-hidden="true" />
+                </span>
+                <div>
+                  <dt className="text-[11px] font-semibold uppercase tracking-wider text-soft">
+                    {t('WhatsApp (availability enquiries)', 'వాట్సాప్ (లభ్యత విచారణలు)')}
+                  </dt>
+                  <dd className="mt-1.5 flex flex-col gap-1">
+                    {[business.whatsapp, business.whatsappSecondary].map((number) => (
+                      <a
+                        key={number}
+                        href={whatsappLink(generalEnquiryMessage(lang), number)}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-sm font-semibold text-body hover:text-[#128C48] dark:hover:text-[#7BE3A5]"
+                      >
+                        {number}
+                      </a>
+                    ))}
+                  </dd>
+                </div>
+              </div>
+
+              <div className="flex gap-3.5">
+                <span className="icon-tile">
+                  <Clock size={18} aria-hidden="true" />
+                </span>
+                <div>
+                  <dt className="text-[11px] font-semibold uppercase tracking-wider text-soft">
+                    {t('Opening hours', 'పనివేళలు')}
+                  </dt>
+                  <dd className="mt-1.5">
+                    <p className="text-sm font-semibold text-body">{business.hours.openDaily}</p>
+                    <p className="text-xs text-soft">{t('Open all seven days', 'వారంలో ఏడు రోజులు')}</p>
+                    <ul className="mt-2 space-y-1">
+                      {business.hours.services.map((service) => (
+                        <li key={service.id} className="text-xs text-soft">
+                          {lang === 'en' ? service.en : service.te}
+                        </li>
+                      ))}
+                    </ul>
+                  </dd>
+                </div>
+              </div>
+            </dl>
+
+            <div className="mt-7 flex flex-col gap-2 border-t border-hair pt-5 text-xs">
+              <p className="flex items-center gap-2 font-medium text-body">
+                <Ban size={13} className="shrink-0 text-terracotta-500 dark:text-saffron-400" aria-hidden="true" />
+                {t('No home delivery — takeaway from the shop only.', 'హోమ్ డెలివరీ లేదు — షాపు నుండి టేక్అవే మాత్రమే.')}
+              </p>
+              <p className="flex items-center gap-2 font-medium text-body">
+                <Wallet size={13} className="shrink-0 text-terracotta-500 dark:text-saffron-400" aria-hidden="true" />
+                {t('No online payment.', 'ఆన్‌లైన్ చెల్లింపు లేదు.')}
+              </p>
             </div>
 
-            {/* ═══ RIGHT: Google Maps ═══ */}
-            <div className="relative h-[400px] lg:h-auto min-h-[400px]">
-              <iframe
-                src="https://www.google.com/maps?q=18.194619,79.199441&z=16&output=embed"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Nivas Tiffin Center Location on Google Maps"
-                className="w-full h-full"
-                aria-label="Google Maps showing Nivas Tiffin Center location"
-              />
-              <div className="absolute top-4 left-4 glass rounded-xl px-3 py-2 shadow-card pointer-events-none">
-                <p className="text-xs font-bold text-brand-dark dark:text-white" style={{ fontFamily: 'DM Sans, sans-serif' }}>📍 Nivas Tiffin Center</p>
-                <p className="text-xs text-gray-500 dark:text-gray-300">Sundaragiri, Telangana</p>
-              </div>
+            <div className="mt-6 grid grid-cols-1 gap-2 sm:grid-cols-3">
+              <a href={telLink(business.phones[0].e164)} className="btn-primary">
+                <Phone size={15} aria-hidden="true" />
+                {t('Call', 'కాల్')}
+              </a>
+              <a
+                href={whatsappLink(generalEnquiryMessage(lang))}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-wa"
+              >
+                <FaWhatsapp size={16} aria-hidden="true" />
+                WhatsApp
+              </a>
+              <a href={business.maps.directions} target="_blank" rel="noreferrer" className="btn-outline">
+                <Navigation size={15} aria-hidden="true" />
+                {t('Directions', 'దారి')}
+              </a>
             </div>
-
           </div>
-        </motion.div>
+
+          <div className="relative min-h-[320px] border-t border-hair lg:min-h-[520px] lg:border-l lg:border-t-0">
+            <iframe
+              src={business.maps.embed}
+              title={t('Nivas Tiffin Center on Google Maps', 'గూగుల్ మ్యాప్స్‌లో నివాస్ టిఫిన్ సెంటర్')}
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="absolute inset-0 h-full w-full"
+            />
+            <div className="pointer-events-none absolute left-3 top-3 border border-hair bg-cream-50/95 px-3 py-2 dark:bg-forest-900/95">
+              <p className="text-xs font-bold text-body">Nivas Tiffin Center</p>
+              <p className="text-[11px] text-soft">
+                {business.address.locality}, {business.address.region}
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
