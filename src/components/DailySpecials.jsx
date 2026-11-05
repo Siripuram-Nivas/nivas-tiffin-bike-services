@@ -135,8 +135,8 @@ const DailySpecials = ({ lang, cart, onAdd }) => {
         <p className="mt-8 flex items-start gap-2 text-xs leading-relaxed text-cream-200/60">
           <Phone size={13} className="mt-0.5 shrink-0" aria-hidden="true" />
           {t(
-            'Availability is confirmed by the shop. Call or WhatsApp us before visiting — no home delivery, no online payment. Images are illustrative.',
-            'లభ్యతను షాపు నిర్ధారిస్తుంది. రాకముందు కాల్ లేదా వాట్సాప్ చేయండి — హోమ్ డెలివరీ లేదు, ఆన్‌లైన్ చెల్లింపు లేదు. చిత్రాలు ఉదాహరణకు మాత్రమే.'
+            'Availability is confirmed by the shop. Call or WhatsApp us before visiting — no home delivery. Images are illustrative.',
+            'లభ్యతను షాపు నిర్ధారిస్తుంది. రాకముందు కాల్ లేదా వాట్సాప్ చేయండి — హోమ్ డెలివరీ లేదు. చిత్రాలు ఉదాహరణకు మాత్రమే.'
           )}
         </p>
         <div className="mt-4 flex flex-wrap gap-3">

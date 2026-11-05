@@ -57,7 +57,6 @@ export const business = {
 
   // Business rules customers must see before enquiring.
   noHomeDelivery: true,
-  noOnlinePayment: true,
 };
 
 export const telLink = (e164) => `tel:${e164}`;

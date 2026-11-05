@@ -84,7 +84,6 @@ const Hero = ({ lang }) => {
                 {t('Takeaway only', 'టేక్అవే మాత్రమే')}
               </span>
               <span>{t('No home delivery', 'హోమ్ డెలివరీ లేదు')}</span>
-              <span>{t('No online payment', 'ఆన్‌లైన్ చెల్లింపు లేదు')}</span>
             </p>
           </div>
 

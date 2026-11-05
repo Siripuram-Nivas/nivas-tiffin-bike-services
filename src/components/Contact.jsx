@@ -1,4 +1,4 @@
-import { MapPin, Phone, Clock, Navigation, Ban, Wallet } from 'lucide-react';
+import { MapPin, Phone, Clock, Navigation, Ban } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
 import { SectionHeading } from './ui';
 import { business, fullAddress, telLink } from '../data/business';
@@ -124,14 +124,10 @@ const Contact = ({ lang }) => {
               </div>
             </dl>
 
-            <div className="mt-7 flex flex-col gap-2 border-t border-hair pt-5 text-xs">
+            <div className="mt-7 border-t border-hair pt-5 text-xs">
               <p className="flex items-center gap-2 font-medium text-body">
                 <Ban size={13} className="shrink-0 text-terracotta-500 dark:text-saffron-400" aria-hidden="true" />
                 {t('No home delivery — takeaway from the shop only.', 'హోమ్ డెలివరీ లేదు — షాపు నుండి టేక్అవే మాత్రమే.')}
-              </p>
-              <p className="flex items-center gap-2 font-medium text-body">
-                <Wallet size={13} className="shrink-0 text-terracotta-500 dark:text-saffron-400" aria-hidden="true" />
-                {t('No online payment.', 'ఆన్‌లైన్ చెల్లింపు లేదు.')}
               </p>
             </div>
 

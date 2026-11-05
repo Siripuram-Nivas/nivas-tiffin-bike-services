@@ -283,8 +283,8 @@ const MenuSection = ({ lang, cart, onAdd }) => {
           <Info size={16} className="mt-0.5 shrink-0 text-terracotta-500 dark:text-saffron-400" aria-hidden="true" />
           <p className="text-xs leading-relaxed text-soft sm:text-sm">
             {t(
-              'No online ordering or payment. Send a takeaway enquiry and the shop will confirm availability, portion and final price. Prices may change without notice.',
-              'ఆన్‌లైన్ ఆర్డర్ లేదా చెల్లింపు లేదు. టేక్అవే విచారణ పంపండి, షాపు లభ్యత, పరిమాణం మరియు తుది ధరను నిర్ధారిస్తుంది. ధరలు మారవచ్చు.'
+              'Send a takeaway enquiry and the shop will confirm availability, portion and final price. Prices may change without notice.',
+              'టేక్‌అవే విచారణ పంపండి, షాపు లభ్యత, పరిమాణం మరియు తుది ధరను నిర్ధారిస్తుంది. ధరలు మారవచ్చు.'
             )}
           </p>
         </div>

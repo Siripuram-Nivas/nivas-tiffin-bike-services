@@ -77,8 +77,8 @@ const About = ({ lang }) => {
             </p>
             <p className="mt-4 text-sm leading-relaxed text-soft">
               {t(
-                'There is no home delivery and no online payment. Come to the shop for takeaway, or call and message ahead so your food is ready when you arrive.',
-                'హోమ్ డెలివరీ లేదు, ఆన్‌లైన్ చెల్లింపు లేదు. టేక్అవే కోసం షాపుకు రండి, లేదా మీరు వచ్చేసరికి సిద్ధంగా ఉండేలా ముందే కాల్ లేదా మెసేజ్ చేయండి.'
+                'There is no home delivery. Come to the shop for takeaway, or call and message ahead so your food is ready when you arrive.',
+                'హోమ్ డెలివరీ లేదు. టేక్అవే కోసం షాపుకు రండి, లేదా మీరు వచ్చేసరికి సిద్ధంగా ఉండేలా ముందే కాల్ లేదా మెసేజ్ చేయండి.'
               )}
             </p>
 

@@ -14,7 +14,7 @@ const copy = {
     estimateNote: 'This is an estimate only, not a confirmed order.',
     note: 'Note',
     closing:
-      'Please confirm availability and whether the order can be accepted. Takeaway only — no home delivery and no online payment.',
+      'Please confirm availability and whether the order can be accepted. Takeaway only — no home delivery.',
     availability: (name) =>
       `Hello Nivas Tiffin Center! Is ${name} available now? I would like to arrange a takeaway.`,
     general: 'Hello Nivas Tiffin Center! Could you share today’s available items and timings?',
@@ -28,7 +28,7 @@ const copy = {
     estimateNote: 'ఇది కేవలం అంచనా మాత్రమే, నిర్ధారించిన ఆర్డర్ కాదు.',
     note: 'గమనిక',
     closing:
-      'దయచేసి లభ్యత మరియు ఆర్డర్ స్వీకరించగలరా అని నిర్ధారించండి. టేక్‌అవే మాత్రమే — హోమ్ డెలివరీ లేదు, ఆన్‌లైన్ చెల్లింపు లేదు.',
+      'దయచేసి లభ్యత మరియు ఆర్డర్ స్వీకరించగలరా అని నిర్ధారించండి. టేక్‌అవే మాత్రమే — హోమ్ డెలివరీ లేదు.',
     availability: (name) =>
       `నమస్తే నివాస్ టిఫిన్ సెంటర్! ${name} ఇప్పుడు లభ్యమవుతుందా? టేక్‌అవే కోసం అడుగుతున్నాను.`,
     general: 'నమస్తే నివాస్ టిఫిన్ సెంటర్! ఈరోజు లభ్యమయ్యే వస్తువులు మరియు సమయాలు చెప్పగలరా?',

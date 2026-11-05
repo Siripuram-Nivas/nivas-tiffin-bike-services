@@ -72,8 +72,8 @@ const WhyChooseUs = ({ lang }) => {
               eyebrow={t('Why people stop by', 'ఎందుకు ఆగుతారు')}
               title={t('Good food, kept simple', 'మంచి భోజనం, సరళంగా')}
               description={t(
-                'No delivery apps, no online payment, no gimmicks. Just a local kitchen serving fresh food every day.',
-                'డెలివరీ యాప్‌లు లేవు, ఆన్‌లైన్ చెల్లింపు లేదు, ఆర్భాటాలు లేవు. ప్రతిరోజూ తాజా భోజనం అందించే స్థానిక వంటశాల.'
+                'No delivery apps, no markups, no gimmicks. Just a local kitchen serving fresh food every day.',
+                'డెలివరీ యాప్‌లు లేవు, అదనపు ఛార్జీలు లేవు, ఆర్భాటాలు లేవు. ప్రతిరోజూ తాజా భోజనం అందించే స్థానిక వంటశాల.'
               )}
             />
             <div className="mt-7 flex items-start gap-2.5 border border-hair p-4">

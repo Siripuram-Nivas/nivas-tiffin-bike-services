@@ -96,8 +96,8 @@ const EnquiryDrawer = ({ open, onClose, lang, lines, count, total, onChangeQty, 
               </p>
               <p className="mx-auto mt-1 max-w-xs text-sm leading-relaxed text-soft">
                 {t(
-                  'Add dishes from the menu to build a takeaway list. Nothing is ordered or paid online.',
-                  'టేక్అవే జాబితా కోసం మెనూ నుండి వంటకాలను చేర్చండి. ఆన్‌లైన్‌లో ఏదీ ఆర్డర్ లేదా చెల్లింపు జరగదు.'
+                  'Add dishes from the menu to build a takeaway list to share with the shop.',
+                  'షాపుతో పంచుకోవడానికి టేక్‌అవే జాబితా కోసం మెనూ నుండి వంటకాలను చేర్చండి.'
                 )}
               </p>
               <a href="#menu" onClick={onClose} className="btn-primary mt-5">
@@ -218,8 +218,8 @@ const EnquiryDrawer = ({ open, onClose, lang, lines, count, total, onChangeQty, 
             <p className="mt-2.5 flex items-start gap-1.5 text-[11px] leading-relaxed text-soft">
               <Info size={12} className="mt-0.5 shrink-0" aria-hidden="true" />
               {t(
-                'WhatsApp opens with your list. Availability and order acceptance are confirmed by the shop. No online payment, no home delivery.',
-                'మీ జాబితాతో వాట్సాప్ తెరుచుకుంటుంది. లభ్యత మరియు ఆర్డర్ ఆమోదాన్ని షాపు నిర్ధారిస్తుంది. ఆన్‌లైన్ చెల్లింపు లేదు, హోమ్ డెలివరీ లేదు.'
+                'WhatsApp opens with your list. Availability and order acceptance are confirmed by the shop. Takeaway only — no home delivery.',
+                'మీ జాబితాతో వాట్సాప్ తెరుచుకుంటుంది. లభ్యత మరియు ఆర్డర్ ఆమోదాన్ని షాపు నిర్ధారిస్తుంది. టేక్‌అవే మాత్రమే — హోమ్ డెలివరీ లేదు.'
               )}
             </p>
 

@@ -127,8 +127,8 @@ const Footer = ({ lang }) => {
             <p className="mt-5 flex items-start gap-2 border border-forest-700 px-3 py-2.5 text-xs leading-relaxed text-cream-200/80">
               <Ban size={13} className="mt-0.5 shrink-0 text-terracotta-400" aria-hidden="true" />
               {t(
-                'No home delivery. No online payment. Takeaway only.',
-                'హోమ్ డెలివరీ లేదు. ఆన్‌లైన్ చెల్లింపు లేదు. టేక్అవే మాత్రమే.'
+                'No home delivery. Takeaway only from the shop.',
+                'హోమ్ డెలివరీ లేదు. షాపు నుండి టేక్‌అవే మాత్రమే.'
               )}
             </p>
           </div>

@@ -1,7 +1,7 @@
 # Nivas Tiffin Center
 
 Mobile-first, bilingual (English / Telugu) website for Nivas Tiffin Center, Sundaragiri.
-Takeaway enquiries only — no home delivery and no online payment.
+Takeaway enquiries only — no home delivery.
 
 ## Stack
 
